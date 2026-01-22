@@ -6,7 +6,7 @@ with open(Path(__file__).parent / "README.md", "r", encoding="utf-8") as f:
 
 st.setup(
     name="ptk-blinkfix",
-    version="1.0.0",
+    version="1.0.1",
     author="Ahmet Altin",
     author_email="me@ahmetaltin.com",
     description="Blinking cursor fix for Python prompt_toolkit apps",
