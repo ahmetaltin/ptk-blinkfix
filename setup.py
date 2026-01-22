@@ -1,4 +1,9 @@
 import setuptools as st
+from pathlib import Path
+
+# Read README.md for PyPI long description
+with open(Path(__file__).parent / "README.md", "r", encoding="utf-8") as f:
+    long_desc = f.read()
 
 meta = {
     "name": "ptk-blinkfix",
@@ -6,10 +11,11 @@ meta = {
     "author": "Ahmet Altin",
     "author_email": "me@ahmetaltin.com",
     "description": "Blinking cursor fix for Python prompt_toolkit apps",
-    "long_description": open("README.md", "r", encoding="utf-8").read(),
+    "long_description": long_desc,
     "long_description_content_type": "text/markdown",
+    "license": "BSD-3-Clause",
     "url": "https://github.com/ahmetaltin/ptk-blinkfix",
-    "packages": st.find_packages(),
+    "packages": st.find_packages(),  # or st.find_packages(where="src") if using src layout
     "python_requires": ">=3.7",
     "install_requires": ["prompt_toolkit>=3.0.0"],
     "classifiers": [
@@ -17,7 +23,9 @@ meta = {
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
     ],
+    "include_package_data": True,
 }
 
 if __name__ == "__main__":
     st.setup(**meta)
+
